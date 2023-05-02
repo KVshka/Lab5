@@ -19,7 +19,6 @@ def F_iter(n): #Итерационное решение
     F[0] = 11
     F[1] = 11
     for i in range(2,n+1):
-#        F[i] = 3*F[i-1] - fact(F[i-2]) #некорректно?
         F[i] = 3*F[i-1] - F[i-2]
     return F[n]
 
@@ -27,7 +26,6 @@ def F_rec(n): #Рекурсивное решение
     if n == 1 or n == 0:
         return 11
     elif n > 1:
-#       return 3*F_rec(n-1) - fact(F_rec(n-2)) #некорректно?
         return 3*F_rec(n-1) - F_rec(n-2)
 
 rec_times = []  # создание списков для построения таблицы значений
