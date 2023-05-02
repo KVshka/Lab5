@@ -6,22 +6,13 @@
 #import math
 import time # импорт библиотек
 import matplotlib.pyplot as mpl
-from sys import setrecursionlimit 
-setrecursionlimit(5000) # увеличение глубины рекурсии
 
 while True:
-    n = int(input("Введите натуральное число n>=0"))
+    n = int(input("Введите натуральное число n>=0: "))
     if n >=0:
         break
     else:
         print("Введено неверное число!")
-
-def fact(x): # факториал
-    if x==0 or x == 1:
-        p=1
-    else:
-        p=fact(x-1)*x
-    return p
 
 def F_iter(n): #Итерационное решение
     F = [0 for i in range(n+1)]
@@ -43,7 +34,7 @@ rec_times = []  # создание списков для построения т
 rec_values = []
 iter_times = []
 iter_values = []
-n_values = list(range(2, n + 1))
+n_values = list(range(1, n + 1))
 
 for n in n_values: # заполнение списков
     t0 = time.time()
@@ -65,7 +56,7 @@ for data in table:
 mpl.plot(n_values, iter_times, label='Итерация')
 mpl.plot(n_values, rec_times, label='Рекурсия')  # вывод графиков
 mpl.xlabel('n')
-mpl.ylabel('Время')
+mpl.ylabel('Время (с)')
 mpl.title('Сравнение времени рекурсивного и итерационного подхода')
 mpl.legend()
 mpl.show()
