@@ -8,8 +8,8 @@ import time # импорт библиотек
 import matplotlib.pyplot as mpl
 
 while True:
-    n = int(input("Введите натуральное число n>=2: "))
-    if n >=2:
+    n = int(input("Введите натуральное число n>=0: "))
+    if n >=0:
         break
     else:
         print("Введено неверное число!")
@@ -18,7 +18,7 @@ def F_iter(n): #Итерационное решение
     F = [0 for i in range(n+1)]
     F[0] = 11
     F[1] = 11
-    for i in range(2,n+1):
+    for i in range(n+1):
         F[i] = 3*F[i-1] - F[i-2]
     return F[n]
 
