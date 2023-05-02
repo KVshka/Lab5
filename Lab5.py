@@ -8,8 +8,8 @@ import time # импорт библиотек
 import matplotlib.pyplot as mpl
 
 while True:
-    n = int(input("Введите натуральное число n>=0: "))
-    if n >=0:
+    n = int(input("Введите натуральное число n>=2: "))
+    if n >=2:
         break
     else:
         print("Введено неверное число!")
